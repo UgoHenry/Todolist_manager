@@ -2,6 +2,7 @@ package com.mytodolist.todolist.controller;
 
 
 import com.mytodolist.todolist.model.Note;
+import com.mytodolist.todolist.request.NoteRequest;
 import com.mytodolist.todolist.service.NoteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -37,6 +38,14 @@ public class NoteController {
         modelAndView.addObject("user", note);
         return modelAndView;
     }
+
+    @PostMapping("/note/save")
+    public void addNewNoteUsingPost(@RequestBody NoteRequest request) {
+        noteService.addNote(
+                request.getDescription(),
+                request.getStatus());
+    }
+
 
     @GetMapping("/note/todo")
     public String viewNotes(Model model) {

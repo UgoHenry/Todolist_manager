@@ -20,7 +20,17 @@
         <td th:text=${note.status}></td>
     </tr>
 </table>
-<button class="btn btn-default">Add note</button>
 
+<!--<form action="#" th:action = "@{/note/save}" th:object="${notes}" method="=GET">-->
+<!--&lt;!&ndash;    description: <input type="text" name="description" th:field="*{description}"/><br/>&ndash;&gt;-->
+<!--    status:<input type="text" name="status" th:field="*{status}">}"/><br/>-->
+<!--    <button name="Add note" type="submit" value="0">Add Note</button>-->
+<!--</form>-->
+
+<form action="#" th:action="@{/note/save}" method="post" th:object="${note}">
+    description:<input type="text" th:field="*{description}" /><br/>
+    status:<input type="text" th:field="*{status}" /><br/>
+    <button type="submit">Add note</button>
+</form>
 </body>
 </html>
