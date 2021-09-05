@@ -5,6 +5,8 @@ import com.mytodolist.todolist.repository.NoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class NoteService {
     @Autowired
@@ -16,6 +18,10 @@ public class NoteService {
         note1.setDescription(description);
         noteRepository.save(note1);
         return note1;
+    }
+
+    public List<Note> listAllNotes(){
+        return noteRepository.findAll();
     }
 
 }

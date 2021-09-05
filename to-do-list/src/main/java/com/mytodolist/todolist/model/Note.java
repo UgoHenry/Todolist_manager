@@ -1,9 +1,7 @@
 package com.mytodolist.todolist.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Note {
@@ -14,8 +12,16 @@ public class Note {
     private String description;
     @Column
     private String status;
+    @OneToMany
+    private List<Item> itemList;
 
+    public List<Item> getItemList() {
+        return itemList;
+    }
 
+    public void setItemList(List<Item> itemList) {
+        this.itemList = itemList;
+    }
 
     public long getId() {
         return id;
