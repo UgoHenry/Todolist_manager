@@ -15,24 +15,17 @@ public class NoteController {
     @Autowired
     NoteService noteService;
 
-//    @GetMapping("/")
-//    public String init(@RequestHeader("User-Agent") String ua) {
-////        return new ResponseEntity<>("<h1>Welcome to the Escape Room. "+ ua +"</h1>", HttpStatus.CREATED);
-//        return "index";
-//    }
-//
-//
+    @RequestMapping("/")
+    public String index() {
+        return"index";
+    }
+
 //    @GetMapping("/note")
 //    public void addNewNote(
 //            @RequestParam String description,
 //            @RequestParam String status
 //    ){noteService.addNote(description,status);}
 
-    @RequestMapping("/")
-    public String index()
-    {
-        return"index";
-    }
     @RequestMapping(value="/save", method= RequestMethod.POST)
     public ModelAndView save(@ModelAttribute Note note)
     {
