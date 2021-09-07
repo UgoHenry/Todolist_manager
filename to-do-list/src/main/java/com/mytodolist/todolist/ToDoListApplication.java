@@ -22,9 +22,9 @@ public class ToDoListApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		List<Note> note1 = new ArrayList<>();
-		note1.add(noteService.addNote("Shopping", "done"));
-		note1.add(noteService.addNote("Gym", "archived"));
+//		List<Note> note1 = new ArrayList<>();
+//		note1.add(noteService.addNote("Shopping", "done"));
+//		note1.add(noteService.addNote("Gym", "archived"));
 
 
 	}

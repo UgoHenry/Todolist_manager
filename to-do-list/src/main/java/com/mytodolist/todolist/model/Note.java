@@ -12,16 +12,16 @@ public class Note {
     private String description;
     @Column
     private String status;
-    @OneToMany
-    private List<Item> itemList;
+//    @OneToMany
+//    private List<Item> itemList;
 
-    public List<Item> getItemList() {
-        return itemList;
-    }
-
-    public void setItemList(List<Item> itemList) {
-        this.itemList = itemList;
-    }
+//    public List<Item> getItemList() {
+//        return itemList;
+//    }
+//
+//    public void setItemList(List<Item> itemList) {
+//        this.itemList = itemList;
+//    }
 
     public long getId() {
         return id;
