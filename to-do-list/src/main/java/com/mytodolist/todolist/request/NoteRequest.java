@@ -4,8 +4,15 @@ public class NoteRequest {
     private long id;
     private String description;
     private String status;
+    private String subtask;
 
+    public String getSubtask() {
+        return subtask;
+    }
 
+    public void setSubtask(String subtask) {
+        this.subtask = subtask;
+    }
 
     public long getId() {
         return id;

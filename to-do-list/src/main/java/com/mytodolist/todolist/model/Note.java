@@ -12,7 +12,17 @@ public class Note {
     private String description;
     @Column
     private String status;
-//    @OneToMany
+    @Column
+    private String subtask;
+
+    public String getSubtask() {
+        return subtask;
+    }
+
+    public void setSubtask(String subtask) {
+        this.subtask = subtask;
+    }
+    //    @OneToMany
 //    private List<Item> itemList;
 
 //    public List<Item> getItemList() {
