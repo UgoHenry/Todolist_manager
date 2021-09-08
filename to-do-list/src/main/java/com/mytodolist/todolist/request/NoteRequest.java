@@ -1,10 +1,22 @@
 package com.mytodolist.todolist.request;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 public class NoteRequest {
     private long id;
     private String description;
     private String status;
     private String subtask;
+    private Date targetDate;
+
+    public Date getTargetDate() {
+        return targetDate;
+    }
+
+    public void setTargetDate(Date targetDate) {
+        this.targetDate = targetDate;
+    }
 
     public String getSubtask() {
         return subtask;

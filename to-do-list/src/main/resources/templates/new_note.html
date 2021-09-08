@@ -17,6 +17,7 @@
     <form action="#" th:action="@{/saveNote}" th:object="${note}" method="POST">
         <input type="text" th:field="*{description}" placeholder="Note description" class="form-control mb-4 col-4">
         <input type="text" th:field="*{subtask}" placeholder="Note subtask" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{targetDate}" placeholder="Note subtask" class="form-control mb-4 col-4">
         <input type="text" th:field="*{status}" placeholder="Note status" class="form-control mb-4 col-4">
         <button type="submit" class="btn btn-info col-2"> Save Note</button>
     </form>

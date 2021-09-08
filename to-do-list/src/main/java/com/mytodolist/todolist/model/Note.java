@@ -1,6 +1,11 @@
 package com.mytodolist.todolist.model;
 
+import org.hibernate.annotations.Type;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -14,6 +19,16 @@ public class Note {
     private String status;
     @Column
     private String subtask;
+    @Column
+    private Date targetDate;
+
+    public Date getTargetDate() {
+        return targetDate;
+    }
+
+    public void setTargetDate(Date targetDate) {
+        this.targetDate = targetDate;
+    }
 
     public String getSubtask() {
         return subtask;

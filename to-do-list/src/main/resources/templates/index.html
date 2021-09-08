@@ -20,6 +20,7 @@
         <tr>
             <th>Description</th>
             <th>Subtask</th>
+            <th>Target Date</th>
             <th>Status</th>
             <th>Actions</th>
         </tr>
@@ -28,6 +29,7 @@
         <tr th:each="note : ${notes}">
             <td th:text="${note.description}"></td>
             <td th:text="${note.subtask}"></td>
+            <td th:text="${note.targetDate}"></td>
             <td th:text="${note.status}"></td>
             <td><a th:href="@{/showFormForEdit/{id}(id=${note.id})}" class="btn btn-primary">Edit</a>
                 <a th:href="@{/deleteNote/{id}(id=${note.id})}" class="btn btn-danger">Delete</a>
