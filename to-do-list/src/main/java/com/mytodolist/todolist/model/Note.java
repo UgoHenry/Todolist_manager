@@ -19,16 +19,16 @@ public class Note {
     private String status;
     @Column
     private String subtask;
-    @Column
-    private Date targetDate;
-
-    public Date getTargetDate() {
-        return targetDate;
-    }
-
-    public void setTargetDate(Date targetDate) {
-        this.targetDate = targetDate;
-    }
+//    @Column
+//    private Date targetDate;
+//
+//    public Date getTargetDate() {
+//        return targetDate;
+//    }
+//
+//    public void setTargetDate(Date targetDate) {
+//        this.targetDate = targetDate;
+//    }
 
     public String getSubtask() {
         return subtask;
