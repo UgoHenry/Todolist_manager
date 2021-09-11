@@ -16,16 +16,17 @@
     <h2>Edit Note</h2>
 
     <form action="#" th:action="@{/saveNote}" th:object="${note}" method="POST">
-
-        <!-- Add hidden form field to handle edit -->
-        <input type="hidden" th:field="*{id}"/>
-
-        <input type="text" th:field="*{description}" class="form-control mb-4 col-4">
-        <input type="text" th:field="*{subtask}" class="form-control mb-4 col-4">
-<!--        <input type="text" th:field="*{targetDate}" class="form-control mb-4 col-4">-->
-        <input type="text" th:field="*{status}" class="form-control mb-4 col-4">
-        <button type="submit" class="btn btn-info col-2" > Edit Note</button>
+        <input type="text" th:field="*{description}" placeholder="Note description" class="form-control col-4">
+        <input type="text" th:field="*{subtask}" placeholder="Note subtask" class="form-control mb-4 col-4">
+        <!--        <input type="text" th:field="*{targetDate}" placeholder="Note subtask" class="form-control mb-4 col-4">-->
+        <label for="status">Note status:</label>
+        <select id="status" th:field="*{status}" placeholder="Note status" class="form-control mb-4 col-4">
+            <option value="active">active</option>
+            <option value="archived">archived</option>
+        </select>
+        <button type="submit" class="btn btn-info col-2"> Save Note</button>
     </form>
+
 
     <hr>
 
