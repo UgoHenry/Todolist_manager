@@ -22,7 +22,7 @@ public class NoteController {
     //display list of note
     @GetMapping("/")
     public String viewNotes(Model model) {
-        List<Note> todo = noteService.listAllNotes();
+        List<Note> todo = noteService.getNotesByStatus("Active");
         model.addAttribute("notes", todo);
         return "index";
     }
