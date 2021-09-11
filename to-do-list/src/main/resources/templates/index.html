@@ -33,10 +33,11 @@
             <td th:text="${note.subtask}"></td>
 <!--            <td th:text="${note.targetDate}"></td>-->
             <td th:text="${note.status}"></td>
-            <td><a th:href="@{/showFormForEdit/{id}(id=${note.id})}" class="btn btn-primary">Edit</a>
+            <td>
+                <a th:href="@{/showFormForEdit/{id}(id=${note.id})}" class="btn btn-primary">Edit</a>
+                <a th:href="@{/archiveNote/{id}(id=${note.id})}" class="btn btn-primary">Archive</a>
                 <a th:href="@{/deleteNote/{id}(id=${note.id})}" class="btn btn-danger">Delete</a>
             </td>
-
         </tr>
         </tbody>
     </table>

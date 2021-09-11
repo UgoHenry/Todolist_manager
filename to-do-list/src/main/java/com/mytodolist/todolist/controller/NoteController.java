@@ -60,6 +60,12 @@ public class NoteController {
         return "redirect:/";
     }
 
+    @GetMapping("/archiveNote/{id}")
+    public String archiveNotedeleteNote(@PathVariable(value = "id") long id){
+        this.noteService.archiveNoteById(id);
+        return "redirect:/";
+    }
+
     @GetMapping("/showArchiveList")
     public String showArchiveList(Model model){
         List<Note> notes = noteService.getNotesByStatus("archived");

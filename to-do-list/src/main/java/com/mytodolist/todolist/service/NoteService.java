@@ -46,6 +46,12 @@ public class NoteService {
         this.noteRepository.deleteById(id);
     }
 
+    public void archiveNoteById(long id){
+        Note note = this.noteRepository.getById(id);
+        note.setStatus("archived");
+        noteRepository.save(note);
+    }
+
     public List <Note> getNotesByStatus(String status){
        List <Note> notes = noteRepository.findByStatus(status);
         return notes;
