@@ -35,22 +35,6 @@ public class NoteController {
         return "new_note";
     }
 
-//    @RequestMapping(value="/save", method= RequestMethod.POST)
-//    public ModelAndView save(@ModelAttribute Note note)
-//    {
-//        ModelAndView modelAndView = new ModelAndView();
-//        modelAndView.setViewName("user-data");
-//        modelAndView.addObject("user", note);
-//        return modelAndView;
-//    }
-
-//    @PostMapping("/saveNote")
-//    public String addNewNoteUsingPost(@RequestBody NoteRequest request) {
-//        noteService.addNote(
-//                request.getDescription(),
-//                request.getStatus());
-//        return "redirect:/";
-//    }
 
     @PostMapping("/saveNote")
     public String saveNote(@ModelAttribute("note") Note note){
@@ -74,6 +58,16 @@ public class NoteController {
         // call delete note method
         this.noteService.deleteNoteById(id);
         return "redirect:/";
+    }
+
+    @GetMapping("/showArchiveList/{status}")
+    public String showArchiveList(@PathVariable(value = "status") String status, Model model){
+        // get note from service
+       List<Note>  note = noteService.getNoteByStatus(status);
+
+        // set note as a model attribute to pre-populate the form
+        model.addAttribute("note", note);
+        return "archive";
     }
 
 
