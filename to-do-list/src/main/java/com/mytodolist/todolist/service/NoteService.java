@@ -46,14 +46,8 @@ public class NoteService {
         this.noteRepository.deleteById(id);
     }
 
-    public List <Note> getNoteByStatus(String status){
+    public List <Note> getNotesByStatus(String status){
        List <Note> notes = noteRepository.findByStatus(status);
-//        Note note = null;
-//        if (optional.isPresent()){
-//            note = optional.get();
-//        }else {
-//            throw new RuntimeException("Note not found for status :: "+ status);
-//        }
         return notes;
     }
 

@@ -14,7 +14,7 @@
 <body>
 
 <div class="container my-2">
-    <h1>Archived List</h1>
+    <h1>Archived Lists</h1>
 
     <table border="1" class="table table-striped table-responsive-md">
         <thead>
@@ -27,16 +27,15 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="note : ${notes}">
-            <td th:text="${note.description.status=archive}"></td>
-            <td th:text="${note.subtask.status=archive}"></td>
-            <!--            <td th:text="${note.targetDate}"></td>-->
-            <td th:text="${note.status.status=archive}"></td>
-            <td><a th:href="@{/showFormForEdit/{id}(id=${note.id})}" class="btn btn-primary">Edit</a>
-                <a th:href="@{/deleteNote/{id}(id=${note.id})}" class="btn btn-danger">Delete</a>
-            </td>
-
-        </tr>
+            <tr th:each="note : ${notes}">
+                <td th:text="${note.description}"></td>
+                <td th:text="${note.subtask}"></td>
+                <!--            <td th:text="${note.targetDate}"></td>-->
+                <td th:text="${note.status}"></td>
+                <td><a th:href="@{/showFormForEdit/{id}(id=${note.id})}" class="btn btn-primary">Edit</a>
+                    <a th:href="@{/deleteNote/{id}(id=${note.id})}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
         </tbody>
     </table>
     <a th:href="@{/}"> Back to Note List</a>

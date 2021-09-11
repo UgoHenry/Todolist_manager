@@ -60,13 +60,10 @@ public class NoteController {
         return "redirect:/";
     }
 
-    @GetMapping("/showArchiveList/{status}")
-    public String showArchiveList(@PathVariable(value = "status") String status, Model model){
-        // get note from service
-       List<Note>  note = noteService.getNoteByStatus(status);
-
-        // set note as a model attribute to pre-populate the form
-        model.addAttribute("note", note);
+    @GetMapping("/showArchiveList")
+    public String showArchiveList(Model model){
+        List<Note> notes = noteService.getNotesByStatus("archived");
+        model.addAttribute("notes", notes);
         return "archive";
     }
 
