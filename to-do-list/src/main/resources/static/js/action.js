@@ -1,3 +1,3 @@
 function showAlert() {
-    alert("The button was clicked!");
+//    alert("The button was clicked!");
 }

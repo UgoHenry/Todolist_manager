@@ -31,6 +31,14 @@ public class NoteService {
         this.noteRepository.save(note);
     }
 
+    public void updateNote(long id, String description, String subtask, String status){
+        Note note = this.noteRepository.getById(id);
+        note.setDescription(description);
+        note.setSubtask(subtask);
+        note.setStatus(status);
+        this.noteRepository.save(note);
+    }
+
     public Note getNoteById(long id){
         Optional <Note> optional = noteRepository.findById(id);
         Note note = null;
@@ -46,9 +54,9 @@ public class NoteService {
         this.noteRepository.deleteById(id);
     }
 
-    public void archiveNoteById(long id){
+    public void setNoteStatusById(long id, String status){
         Note note = this.noteRepository.getById(id);
-        note.setStatus("archived");
+        note.setStatus(status);
         noteRepository.save(note);
     }
 
