@@ -15,9 +15,8 @@ repositories {
 }
 
 configurations {
-	developmentOnly
-	runtimeClasspath {
-		extendsFrom developmentOnly
+	compileOnly {
+		extendsFrom annotationProcessor
 	}
 }
 
@@ -36,16 +35,3 @@ test {
 	useJUnitPlatform()
 }
 
-jar {
-	manifest {
-		attributes 'Main-Class': 'com/mytodolist/todolist/ToDoListApplication'
-	}
-	from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
-}
-
-war {
-	manifest {
-		attributes 'Main-Class': 'com/mytodolist/todolist/ToDoListApplication'
-	}
-	from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
-}
